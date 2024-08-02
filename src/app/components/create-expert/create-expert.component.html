@@ -1,4 +1,4 @@
-  <div class="pagetitle">
+<div class="pagetitle">
     <nav>
       <ol class="breadcrumb">
         <li class="breadcrumb-item"><a [routerLink]="['/welcome']">Home</a></li>
@@ -15,27 +15,24 @@
         <div class="card">
           <div class="card-body">
             <h5 class="card-title text-center">New expert</h5>
-  
-            <!-- Vertical Form -->
-            <form class="row g-3" >
+            <form class="row g-3" (ngSubmit)="onSubmit()" #expertForm="ngForm">
               <div class="col-12">
                 <label for="nom" class="form-label">Nom</label>
-                <input type="text" class="form-control" id="nom" name="nom">
+                <input type="text" class="form-control" id="nom" [(ngModel)]="expert.nom" name="nom" required>
+                
               </div>
               <div class="col-12">
                 <label for="prenom" class="form-label">Prenom</label>
-                <input type="text" class="form-control" id="prenom" name="prenom" >
+                <input type="text" class="form-control" id="prenom"  [(ngModel)]="expert.prenom" name="prenom" required>
+                
               </div>
               <div class="col-12">
                 <label for="specialite" class="form-label">Specialite</label>
-                <input type="text" class="form-control" id="specialite" name="specialite">
-              </div>
-             
-              <div class="text-center">
-                <button type="submit" class="btn btn-primary">Enregistrer</button>
-              
-              </div>
-            </form><!-- Vertical Form -->
+                <input type="text" class="form-control" id="specialite"  [(ngModel)]="expert.specialite" name="specialite" required>
+                
+              </div>           
+              <button type="submit" class="btn btn-primary" [disabled]="!expertForm.form.valid">Enregistrer</button>   
+            </form>
   
           </div>
         </div>
