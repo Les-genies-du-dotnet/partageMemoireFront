@@ -1,0 +1,54 @@
+
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/welcome']">Home</a></li>
+      <li class="breadcrumb-item active">Edit-Expert</li>
+    </ol>
+  </nav>
+</div>
+<div class="container py-1 h-100">
+  <div class="row  d-flex align-items-center justify-content-center h-100">
+    <div class="col-md-auto col-lg-8 col-xl-7 offset-xl-1" style="display: flex;
+    flex-direction: column;
+    height: 100%; /* Ou une hauteur spécifique si nécessaire */
+    width: 75%; padding: 20px;">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title text-center">Edit expert</h5>
+
+          <!-- Vertical Form -->
+          <form class="row g-3" *ngIf="expert">
+            <div class="col-12" >
+              <label for="nom" class="form-label">Nom</label>
+              <input type="text" class="form-control" id="nom" [(ngModel)]="expert.nom">
+            </div>
+            <div class="col-12">
+              <label for="prenom" class="form-label">Prenom</label>
+              <input type="text" class="form-control" id="prenom" [(ngModel)]="expert.prenom">
+            </div>
+            <div class="col-12">
+              <label for="specialite" class="form-label" [(ngModel)]="expert.specialite">Specialite</label>
+              <input type="text" class="form-control" id="specialite">
+            </div>
+           
+            <div class="text-center">
+              <button type="submit" class="btn btn-primary">Enregistrer</button>
+            
+            </div>
+          </form><!-- End Vertical Form -->
+
+        </div>
+      </div>
+      <div class="row mb-1">
+        <div> 
+            <a [routerLink]="['/listExpert']" style="color: #18A8D8;">
+                <i class="bi bi-arrow-right-circle" style="font-size: 1.25rem;"></i>
+                Back to list
+            </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

@@ -1,0 +1,9 @@
+.bi-pencil{
+    margin-right: 12px;
+    color: rgb(0, 102, 255);
+    font-size: 25px;
+}
+.bi-trash{
+    color: red;
+    font-size: 25px;
+}
