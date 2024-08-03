@@ -1,4 +1,4 @@
-<div class="pagetitle">
+<!-- <div class="pagetitle">
   <nav>
     <ol class="breadcrumb">
       <li class="breadcrumb-item"><a [routerLink]="['/welcome']">Home</a></li>
@@ -18,9 +18,9 @@
                   Nouveau+
                 </button>
               </div>
-            </div>
+            </div> -->
             <!-- Table with hoverable rows -->
-            <table class="table table-hover table-primary">
+            <!-- <table class="table table-hover table-primary">
               <thead>
                 <tr class="text-center">
                   <th scope="col">Prenom</th>
@@ -47,9 +47,59 @@
                 </tr>
                 
               </tbody>
-            </table>
+            </table> -->
             <!-- End Table with hoverable rows -->
 
-      </div>
+      <!-- </div>
     </div>
+</div> -->
+<div class="pagetitle">
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a [routerLink]="['/welcome']">Home</a></li>
+      <li class="breadcrumb-item active">List-Expert</li>
+    </ol>
+  </nav>
 </div>
+<div class="container mt-5">
+  <div class="row justify-content-center">
+    <div class="col-lg-6" style="display: flex; flex-direction: column; height: 100%; width: 75%; padding: 20px;">
+      <div class="row mb-1">
+        <div> 
+          <button class="btn btn-primary" [routerLink]="['/createExpert']">
+            Nouveau+
+          </button>
+        </div>
+      </div>
+      <!-- Table with hoverable rows -->
+      <table class="table table-hover table-primary">
+        <thead>
+          <tr class="text-center">
+            <th scope="col">Prenom</th>
+            <th scope="col">Nom</th>
+            <th scope="col">Specialite</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let expert of experts" class="text-center">
+            <td>{{ expert.nom }}</td>
+            <td>{{ expert.prenom }}</td>
+            <td>{{ expert.specialite }}</td>
+            <td>
+              <a [routerLink]="['/editExpert', expert.id]">
+                <i class="bi bi-pencil"></i>
+              </a>
+              <a (click)="deleteExpert(expert)" *ngIf="expert.id">
+                <i class="bi bi-trash"></i>
+              </a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <!-- End Table with hoverable rows -->
+    </div>
+  </div>
+</div>
+
+
